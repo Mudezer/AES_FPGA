@@ -1,4 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/yohku/Documents/ULB/Digital_Archi/Project/implementation/AddRoundKey.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'AddRoundKey'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/yohku/Documents/ULB/Digital_Archi/Project/implementation/AddRoundKey_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/implementation/AddRoundKey_tb.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'AddRoundKey_tb'

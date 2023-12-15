@@ -18,6 +18,7 @@ architecture arch of AddRoundKey is begin
         if (rising_edge(Clk)) then
             output <= plain xor key;
         end if;
+        
     end process;
 end arch;
 

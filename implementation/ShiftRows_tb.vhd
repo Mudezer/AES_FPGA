@@ -11,6 +11,7 @@ end ShiftRows_tb;
 architecture ShiftRows_tbArch of ShiftRows_tb is
 
 component ShiftRows is port(
+    Clk: in std_logic;
     input : in matrix;
     output : out matrix
 ); end component;
@@ -18,13 +19,14 @@ component ShiftRows is port(
 signal plaintext : std_logic_vector(0 to 127);
 signal output : matrix;
 signal input : matrix;
+signal Clk : std_logic := '0';
 
 signal resultExa : std_logic_vector(0 to 127);
 signal result : matrix;
 
 begin
-    uut : ShiftRows port map( input => input, output => output );
-    stim : process
+    uut : ShiftRows port map(Clk => Clk, input => input, output => output );
+    clock_process : process
     begin
         wait for 10ns;
         plaintext <= x"090862BF6F28E3042C747FEEDA4A6A47";
@@ -37,7 +39,8 @@ begin
                 end loop;
             end loop;
         end loop;
-
+        wait for 10ns;
+        Clk <= not Clk;
         wait for 10ns;
     end process;
 end ShiftRows_tbArch;

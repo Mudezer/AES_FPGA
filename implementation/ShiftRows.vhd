@@ -7,46 +7,30 @@ library xil_defaultlib;
 use xil_defaultlib.matpack.all;
 
 entity ShiftRows is port(
-    plain: in std_logic_vector(127 downto 0);
-    outmatrix : out matrix
+    input : in matrix;
+    output : out matrix
 ); end ShiftRows;
 
 architecture arch of ShiftRows is
-    signal inmatrix: matrix;
-    signal temp: std_logic_vector(7 downto 0);
-    
-begin
-    stim : process begin
-          -- input matrix creation
-        for i in 0 to 3 loop
-            for j in 0 to 3 loop
-                for l in 0 to 7 loop
-                    inmatrix(i)(j)(l) <= plain(32*i+8*j+l);
-                end loop;
-            end loop;
-        end loop;
-            -- first row
-            outmatrix(0) <= inmatrix(0);
-            -- second row
-            outmatrix(1)(3) <= inmatrix(1)(0);
-            for j in 0 to 2 loop
-                outmatrix(1)(j) <= inmatrix(1)(j+1);
-            end loop;
-            -- third row
-            outmatrix(2)(2) <=  inmatrix(2)(0);
-            outmatrix(2)(3) <=  inmatrix(2)(1);
-            outmatrix(2)(0) <=  inmatrix(2)(2);
-            outmatrix(2)(1) <=  inmatrix(2)(3);
-            -- fourth row
-            outmatrix(3)(0) <= inmatrix(3)(3);
-            for j in 1 to 3 loop
-                outmatrix(3)(j) <= inmatrix(3)(j-1);
-            end loop;
-            -- output vector 
-    end process;
+    begin
+        -- first row
+        output(0)(0) <= input(0)(0);
+        output(0)(1) <= input(0)(1);
+        output(0)(2) <= input(0)(2);
+        output(0)(3) <= input(0)(3);
+        -- second row
+        output(1)(0) <= input(1)(1);
+        output(1)(1) <= input(1)(2);
+        output(1)(2) <= input(1)(3);
+        output(1)(3) <= input(1)(0);
+        -- third row
+        output(2)(0) <=  input(2)(2);
+        output(2)(1) <=  input(2)(3);
+        output(2)(2) <=  input(2)(0);
+        output(2)(3) <=  input(2)(1);
+        -- fourth row
+        output(3)(0) <= input(3)(3);
+        output(3)(1) <= input(3)(0);
+        output(3)(2) <= input(3)(1);
+        output(3)(3) <= input(3)(2);
 end arch;
-
-
--- une matrice est un tableau de rangée (i)
--- une rangée est un tableau de vecteur (j)
--- un vecteur est un tableau de bit (l)

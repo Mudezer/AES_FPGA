@@ -1,7 +1,7 @@
 Vivado Simulator v2023.2
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot test_tb_behav xil_defaultlib.test_tb -log elaborate.log 
+Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot ShiftRows_tb_behav xil_defaultlib.ShiftRows_tb -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -14,6 +14,6 @@ Compiling package ieee.std_logic_1164
 Compiling package ieee.numeric_std
 Compiling package xil_defaultlib.matpack
 Compiling package ieee.math_real
-Compiling architecture arch of entity xil_defaultlib.test [test_default]
-Compiling architecture test_tbarch of entity xil_defaultlib.test_tb
-Built simulation snapshot test_tb_behav
+Compiling architecture arch of entity xil_defaultlib.ShiftRows [shiftrows_default]
+Compiling architecture shiftrows_tbarch of entity xil_defaultlib.shiftrows_tb
+Built simulation snapshot ShiftRows_tb_behav

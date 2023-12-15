@@ -1,4 +1,4 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/implementation/test.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'test'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/implementation/test_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'test_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/implementation/ShiftRows.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ShiftRows'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/implementation/ShiftRows_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ShiftRows_tb'

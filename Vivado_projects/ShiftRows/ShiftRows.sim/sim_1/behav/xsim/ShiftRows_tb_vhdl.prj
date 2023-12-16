@@ -1,8 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../../../implementation/matpack.vhd" \
-"../../../../../../implementation/ShiftRows.vhd" \
-"../../../../../../implementation/ShiftRows_tb.vhd" \
-
-# Do not sort compile order
-nosort

@@ -2,8 +2,8 @@
 vhdl xil_defaultlib  \
 "../../../../../../S_box.vhd" \
 "../../../../../../implementation/matpack.vhd" \
-"../../../../../../implementation/SubBytes.vhd" \
-"../../../../../../implementation/SubBytes_tb.vhd" \
+"../../../../../../implementation/SubBytes_v2.vhd" \
+"../../../../../../implementation/SubBytes_v2_tb.vhd" \
 
 # Do not sort compile order
 nosort

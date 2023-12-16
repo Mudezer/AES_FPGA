@@ -3,6 +3,6 @@
 Oct 13 2023
 20:47:58
 C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/S_box.vhd,1702671299,vhdl,,,,s_box,,,,,,,,
-C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/implementation/SubBytes.vhd,1702672510,vhdl,,,,subbytes,,,,,,,,
-C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/implementation/SubBytes_tb.vhd,1702671468,vhdl,,,,subbytes_tb,,,,,,,,
-C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/implementation/matpack.vhd,1702647314,vhdl,C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/implementation/SubBytes.vhd,,,matpack,,,,,,,,
+C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/implementation/SubBytes_v2.vhd,1702725913,vhdl,,,,subbytes,,,,,,,,
+C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/implementation/SubBytes_v2_tb.vhd,1702725841,vhdl,,,,subbytes_tb,,,,,,,,
+C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/implementation/matpack.vhd,1702647314,vhdl,C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/implementation/SubBytes_v2.vhd,,,matpack,,,,,,,,

@@ -12,22 +12,23 @@ end SubBytes_tb;
 architecture SubBytes_tbArch of SubBytes_tb is
 
 component SubBytes is port(
+    Clk : in std_logic;
     input : in matrix;
     output : out matrix
 ); end component;
 
 signal input : matrix;
 signal output : matrix;
+signal Clk : std_logic := '0';
 
 signal result: matrix;
 signal plaintext: std_logic_vector(0 to 127);
 signal resultExa : std_logic_vector(0 to 127);
 
 begin
-    uut : SubBytes port map(input => input, output => output);
-    stim: process
+    uut : SubBytes port map(Clk => Clk, input => input, output => output);
+    clock_process: process
     begin
-        wait for 10ns;
         plaintext <= x"40BFABF406EE4D3042CA6B997A5C5816";
         resultExa <= x"090862BF6F28E3042C747FEEDA4A6A47";
         for i in 0 to 3 loop
@@ -38,6 +39,7 @@ begin
                 end loop;
             end loop;
         end loop;
-        wait for 10 ns;
-    end process;
+        wait for 200ns;
+        Clk <= not Clk;
+    end process clock_process;
 end SubBytes_tbArch;

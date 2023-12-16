@@ -1,8 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../../../implementation/utils/matpack.vhd" \
-"../../../../../../implementation/AES_elements/AddRoundKey.vhd" \
-"../../../../../../implementation/test_benches/AddRoundKey_tb.vhd" \
-
-# Do not sort compile order
-nosort

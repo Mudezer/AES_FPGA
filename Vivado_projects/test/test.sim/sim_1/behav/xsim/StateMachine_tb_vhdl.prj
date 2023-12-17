@@ -1,0 +1,15 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../../implementation/utils/matpack.vhd" \
+"../../../../../../implementation/AES_steps/AddRoundKey.vhd" \
+"../../../../../../assets/LUT_mul2.vhd" \
+"../../../../../../assets/LUT_mul3.vhd" \
+"../../../../../../implementation/AES_steps/MixColumns_v2.vhd" \
+"../../../../../../assets/S_box.vhd" \
+"../../../../../../implementation/AES_steps/ShiftRows.vhd" \
+"../../../../../../implementation/StateMachine.vhd" \
+"../../../../../../implementation/AES_steps/SubBytes_v2.vhd" \
+"../../../../../../implementation/test_benches/StateMachine_tb.vhd" \
+
+# Do not sort compile order
+nosort

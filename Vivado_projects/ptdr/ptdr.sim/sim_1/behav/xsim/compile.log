@@ -1,4 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/implementation/noClock/Core.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'Core'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/implementation/noClock/Core_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'Core_tb'

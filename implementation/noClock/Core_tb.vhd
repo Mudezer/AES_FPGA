@@ -34,7 +34,7 @@ begin
     begin
         wait for 10 ns;
         plaintext <= x"40BFABF406EE4D3042CA6B997A5C5816";
-        resultExa <= x"FDF37CDB4B0C8C1BF7FCD8E94AA9BBF8";
+        resultExa <= x"BB36C7EB88334D49A4E7112E74F182C4";
         
         for i in 0 to 3 loop
             for j in 0 to 3 loop

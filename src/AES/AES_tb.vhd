@@ -12,12 +12,14 @@ architecture ben of AES_tb is
 
 component AES is port(
     Clk, EN : in std_logic;
+    Rst : in std_logic;
     input : in std_logic_vector(0 to 127);
     output : out std_logic_vector(0 to 127)
     -- output : out matrix
 ); end component;
 
 signal Clk, EN : std_logic := '0';
+signal Rst : std_logic := '0';
 
 signal input : std_logic_vector(0 to 127);
 signal output : std_logic_vector(0 to 127);
@@ -27,12 +29,17 @@ signal resultExa : std_logic_vector(0 to 127);
 -- signal result : matrix;
 
 begin
-    kek : AES port map(Clk => Clk, EN => EN, input => input, output => output);
+    kek : AES port map(Clk => Clk, Rst => Rst, EN => EN, input => input, output => output);
 
     clock_process : process
     begin
         wait for 10 ns;
-        input <= x"6BC1BEE22E409F96E93D7E117393172A";
+        -- input <= x"6BC1BEE22E409F96E93D7E117393172A"; -- 1st plaintext
+        -- input <= x"AE2D8A571E03AC9C9EB76FAC45AF8E51"; -- 2nd plaintext
+        -- input <= x"30C81C46A35CE411E5FBC1191A0A52EF"; -- 3rd plaintext
+        input <= x"F69F2445DF4F9B17AD2B417BE66C3710"; -- 4th plaintext
+
+        -- Following lines are for debug purposes
         -- resultExa <= x"40BFABF406EE4D3042CA6B997A5C5816"; -- 1st addroundkey
         -- resultExa <= x"F265E8D51FD2397BC3B9976D9076505C"; -- 1st round
         -- resultExa <= x"FDF37CDB4B0C8C1BF7FCD8E94AA9BBF8"; -- 2nd round
@@ -43,7 +50,12 @@ begin
         -- resultExa <= x"E26DBB7D40D22134E3B7FDA26B9B077C"; -- 7th round
         -- resultExa <= x"41D7C6537D669140DD2F179D02ACC51B"; -- 8th round
         -- resultExa <= x"BB36C7EB88334D49A4E7112E74F182C4"; -- 9th round
-        resultExa <= x"3AD77BB40D7A3660A89ECAF32466EF97";
+
+        -- resultExa <= x"3AD77BB40D7A3660A89ECAF32466EF97"; -- 1st ciphertext
+        -- resultExa <= x"F5D3D58503B9699DE785895A96FDBAAF"; -- 2nd ciphertext
+        -- resultExa <= x"43B1CD7F598ECE23881B00E3ED030688"; -- 3rd ciphertext
+        resultExa <= x"7B0C785E27E8AD3F8223207104725DD4"; -- 4th ciphertext
+
 
             -- for i in 0 to 3 loop
             --     for j in 0 to 3 loop
@@ -63,9 +75,11 @@ begin
         wait for 10 ns;
     end process;
 
-    --Rst_process : process
-    --begin
-     --   Rst <= '0';
-       -- wait for 1 ns;
-    --end process;
+    Rst_process : process
+    begin
+       Rst <= not Rst;
+       wait for 1 ns;
+       Rst <= not Rst;
+       wait for 130 ns;
+    end process;
 end ben;

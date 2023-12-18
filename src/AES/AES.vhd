@@ -7,7 +7,7 @@ use xil_defaultlib.matpack.all;
 
 entity AES is port(
     Clk, EN : in std_logic;
-    -- Rst : in std_logic;
+    Rst : in std_logic;
     input : in std_logic_vector(0 to 127);
     output : out std_logic_vector(0 to 127)
 ); end AES;
@@ -344,11 +344,11 @@ begin
     fsm2 : process(Clk)
     begin
         if (Clk'event) and (Clk = '1') then
-            --if Rst = '1' then
-              --  currentState <= c0;
-            --else
+            if Rst = '1' then
+               currentState <= c0;
+            else
                 currentState <= nextState;
-           -- end if;
+           end if;
         end if;
     end process fsm2;
 end arch;

@@ -1,0 +1,7 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/assets/S_box.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'S_box'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/matpack.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/SubBytes_v2.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SubBytes'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/SubBytes_v2_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SubBytes_tb'

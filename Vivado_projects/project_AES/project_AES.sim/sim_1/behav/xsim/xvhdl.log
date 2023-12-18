@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'AES'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'AES_tb'

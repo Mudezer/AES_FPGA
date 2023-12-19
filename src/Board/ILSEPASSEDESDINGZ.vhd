@@ -6,10 +6,26 @@ library xil_defaultlib;
 use xil_defaultlib.matpack.all;
 
 entity AES is port(
-    Clk, EN : in std_logic;
+    -- inputs
+    clk : in std_logic;
     Rst : in std_logic;
-    input : in std_logic_vector(0 to 127);
-    output : out std_logic_vector(0 to 127)
+    btnR : in std_logic;
+    btnC : in std_logic;
+    btnU : in std_logic;
+
+    -- Segment Display
+    led0 : out std_logic;
+    seg0 : out std_logic;
+    seg1 : out std_logic;
+    seg2 : out std_logic;
+    seg3 : out std_logic;
+    seg4 : out std_logic;
+    seg5 : out std_logic;
+    seg6 : out std_logic;
+    an0 : out std_logic;
+    an1 : out std_logic;
+    an2 : out std_logic;
+    an3 : out std_logic
 ); end AES;
 
 
@@ -46,7 +62,14 @@ component MatrixToVector is port(
     output : out std_logic_vector(0 to 127)
 ); end component;
 
-type statetype is ( -- board states
+component SegmentMaster is port(
+    CLK_100MHZ : in std_logic;
+    SEG_OUT : out std_logic_vector(6 downto 0);
+    ANODE_ACT : out std_logic_vector(3 downto 0)
+); end component;
+
+
+type statetype is ( isInit, isEncrypted, isDisplaying, -- board states
                     c0, -- vector to matrix
                     c1,c2, --1st AddRoundKey
                     c3,c4,c5,c6, -- 1st round
@@ -58,8 +81,7 @@ type statetype is ( -- board states
                     c27,c28,c29,c30, -- 7th round
                     c31,c32,c33,c34, -- 8th round
                     c35,c36,c37,c38, -- 9th round
-                    c39,c40,c41, -- last AddRoundKey
-                    c42); -- matrix to vector
+                    c39,c40,c41); -- last AddRoundKey
 
 signal currentState, nextState : statetype;
 
@@ -69,6 +91,18 @@ signal outputAdd, outputSub, outputShift, outputMix, outputVTM : matrix;
 signal inputKey : std_logic_vector(0 to 127);
 signal inputVTM : std_logic_vector(0 to 127);
 signal outputMTV : std_logic_vector(0 to 127);
+signal testing_output : std_logic;
+
+signal start : std_logic := '0';
+signal Reset : std_logic := '0';
+signal centralButton : std_logic := '0';
+signal hardReset : std_logic := '0';
+signal display : std_logic := '0';
+signal EN : std_logic := '1';
+signal displays: std_logic := '0';
+
+signal segment_out : std_logic_vector(6 downto 0);
+signal anode_active : std_logic_vector(3 downto 0);
 
 begin
     vtm : VectorToMatrix port map(input => inputVTM, output => outputVTM);
@@ -77,12 +111,20 @@ begin
     shift : ShiftRows port map(input => inputShift, output => outputShift);
     mix : MixColumns port map(input => inputMix, output => outputMix);
     add : AddRoundKey port map(input => inputAdd, key => inputKey, output => outputAdd);
+    segment : SegmentMaster port map(CLK_100MHZ => clk, SEG_OUT => segment_out, ANODE_ACT => anode_active);
 
-    fsm1 : process(EN, currentState)
+    fsm1 : process(EN, currentState, start)
     begin
         case currentState is
-            when c0 => inputVTM <= input;
+            when isInit => led0 <= '1'; start <= centralButton;
+            if start = '1' then
+                nextState <= c0;
+            else
+                nextState <= isInit;
+            end if;
+            when c0 => start <='0'; inputVTM <= x"6BC1BEE22E409F96E93D7E117393172A";
             if EN = '1' then
+                led0 <= '0';
                 nextState <= c1;
             else
                 nextState <= c0;
@@ -329,27 +371,55 @@ begin
             end if;
             when c41 => inputMTV <= outputAdd; -- AddRoundKey => output (10th round) (42)
             if EN = '1' then
-                nextState <= c42;
+                nextState <= isEncrypted;
             else
                 nextState <= c41;
             end if;
-            when c42 => output <= outputMTV;
-            if EN = '1' then
-                nextState <= c0;
+            when isEncrypted => testing_output <= '1'; -- is encrypted?
+            if testing_output = '1' then
+                nextState <= isDisplaying;
             else
-                nextState <= c42;
+                nextState <= isEncrypted;
+            end if;
+            when isDisplaying => start <= '0';
+            if EN = '1' then
+                seg0 <= segment_out(0);
+                seg1 <= segment_out(1);
+                seg2 <= segment_out(2);
+                seg3 <= segment_out(3);
+                seg4 <= segment_out(4);
+                seg5 <= segment_out(5);
+                seg6 <= segment_out(6);
+                an0 <= anode_active(0);
+                an1 <= anode_active(1);
+                an2 <= anode_active(2);
+                an3 <= anode_active(3);
+                nextState <= isDisplaying;
+            else
+                nextState <= isInit;
             end if;
         end case;
     end process fsm1;
 
-    fsm2 : process(Clk)
-    begin
-        if (Clk'event) and (Clk = '1') then
-            if Rst = '1' then
-               currentState <= c0;
+    fsm2 : process(clk) is begin
+        if rising_edge(clk) then
+            centralButton <= btnC;
+            hardReset <= btnU;
+            Reset <= btnR;
+        end if;
+        
+        if (clk'event) and (clk = '1') then
+            if Reset = '1' then
+                Reset <= '0';
+                currentState <= c0;
             else
-                currentState <= nextState;
-           end if;
+                if hardReset = '1' then
+                    hardReset <= '0';
+                    currentState <= isInit;
+                else
+                    currentState <= nextState;
+                end if;
+            end if;
         end if;
     end process fsm2;
 end arch;

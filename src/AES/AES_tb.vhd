@@ -34,10 +34,10 @@ begin
     clock_process : process
     begin
         wait for 10 ns;
-        -- input <= x"6BC1BEE22E409F96E93D7E117393172A"; -- 1st plaintext
+        input <= x"6BC1BEE22E409F96E93D7E117393172A"; -- 1st plaintext
         -- input <= x"AE2D8A571E03AC9C9EB76FAC45AF8E51"; -- 2nd plaintext
         -- input <= x"30C81C46A35CE411E5FBC1191A0A52EF"; -- 3rd plaintext
-        input <= x"F69F2445DF4F9B17AD2B417BE66C3710"; -- 4th plaintext
+        --input <= x"F69F2445DF4F9B17AD2B417BE66C3710"; -- 4th plaintext
 
         -- Following lines are for debug purposes
         -- resultExa <= x"40BFABF406EE4D3042CA6B997A5C5816"; -- 1st addroundkey
@@ -51,10 +51,10 @@ begin
         -- resultExa <= x"41D7C6537D669140DD2F179D02ACC51B"; -- 8th round
         -- resultExa <= x"BB36C7EB88334D49A4E7112E74F182C4"; -- 9th round
 
-        -- resultExa <= x"3AD77BB40D7A3660A89ECAF32466EF97"; -- 1st ciphertext
+        resultExa <= x"3AD77BB40D7A3660A89ECAF32466EF97"; -- 1st ciphertext
         -- resultExa <= x"F5D3D58503B9699DE785895A96FDBAAF"; -- 2nd ciphertext
         -- resultExa <= x"43B1CD7F598ECE23881B00E3ED030688"; -- 3rd ciphertext
-        resultExa <= x"7B0C785E27E8AD3F8223207104725DD4"; -- 4th ciphertext
+        --resultExa <= x"7B0C785E27E8AD3F8223207104725DD4"; -- 4th ciphertext
 
 
             -- for i in 0 to 3 loop

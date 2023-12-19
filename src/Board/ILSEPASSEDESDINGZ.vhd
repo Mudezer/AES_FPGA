@@ -11,7 +11,6 @@ entity AES is port(
     Rst : in std_logic;
     btnR : in std_logic;
     btnC : in std_logic;
-    btnU : in std_logic;
 
     -- Segment Display
     led0 : out std_logic;
@@ -91,12 +90,12 @@ signal outputAdd, outputSub, outputShift, outputMix, outputVTM : matrix;
 signal inputKey : std_logic_vector(0 to 127);
 signal inputVTM : std_logic_vector(0 to 127);
 signal outputMTV : std_logic_vector(0 to 127);
-signal testing_output : std_logic;
+signal testing_output : std_logic_vector(0 to 127);
+signal test : std_logic_vector(0 to 127);
 
 signal start : std_logic := '0';
 signal Reset : std_logic := '0';
 signal centralButton : std_logic := '0';
-signal hardReset : std_logic := '0';
 signal display : std_logic := '0';
 signal EN : std_logic := '1';
 signal displays: std_logic := '0';
@@ -124,6 +123,7 @@ begin
             end if;
             when c0 => start <='0'; inputVTM <= x"6BC1BEE22E409F96E93D7E117393172A";
             if EN = '1' then
+                test <= x"3AD77BB40D7A3660A89ECAF32466EF97";
                 led0 <= '0';
                 nextState <= c1;
             else
@@ -376,7 +376,7 @@ begin
                 nextState <= c41;
             end if;
             when isEncrypted => testing_output <= '1'; -- is encrypted?
-            if testing_output = '1' then
+            if (testing_output = '1') then
                 nextState <= isDisplaying;
             else
                 nextState <= isEncrypted;
@@ -404,21 +404,15 @@ begin
     fsm2 : process(clk) is begin
         if rising_edge(clk) then
             centralButton <= btnC;
-            hardReset <= btnU;
             Reset <= btnR;
         end if;
         
         if (clk'event) and (clk = '1') then
             if Reset = '1' then
-                Reset <= '0';
-                currentState <= c0;
+                    Reset <= '0';
+                    currentState <= c0;
             else
-                if hardReset = '1' then
-                    hardReset <= '0';
-                    currentState <= isInit;
-                else
-                    currentState <= nextState;
-                end if;
+                currentState <= nextState;
             end if;
         end if;
     end process fsm2;

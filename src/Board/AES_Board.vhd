@@ -5,18 +5,18 @@ use ieee.numeric_std.all;
 library xil_defaultlib;
 use xil_defaultlib.matpack.all;
 
-entity AES is port(
+entity AESBoard is port(
     -- inputs
     clk : in std_logic;
-    Rst : in std_logic;
     btnR : in std_logic;
     btnC : in std_logic;
 
     -- Segment Display
     led0 : out std_logic;
+    led3 : out std_logic;
     seg0 : out std_logic;
     seg1 : out std_logic;
-    seg2 : out std_logic;
+    seg2 : out std_logic; 
     seg3 : out std_logic;
     seg4 : out std_logic;
     seg5 : out std_logic;
@@ -25,10 +25,10 @@ entity AES is port(
     an1 : out std_logic;
     an2 : out std_logic;
     an3 : out std_logic
-); end AES;
+); end AESBoard;
 
 
-architecture arch of AES is 
+architecture arch of AESBoard is 
 
 component AddRoundKey is port(
     input : in matrix;
@@ -68,7 +68,7 @@ component SegmentMaster is port(
 ); end component;
 
 
-type statetype is ( isInit, isEncrypted, isDisplaying, -- board states
+type statetype is ( isInit, isAcquiring,isEncrypted, isDisplaying, -- board states
                     c0, -- vector to matrix
                     c1,c2, --1st AddRoundKey
                     c3,c4,c5,c6, -- 1st round
@@ -90,8 +90,9 @@ signal outputAdd, outputSub, outputShift, outputMix, outputVTM : matrix;
 signal inputKey : std_logic_vector(0 to 127);
 signal inputVTM : std_logic_vector(0 to 127);
 signal outputMTV : std_logic_vector(0 to 127);
-signal testing_output : std_logic_vector(0 to 127);
-signal test : std_logic_vector(0 to 127);
+signal testOutput : std_logic_vector(0 to 127);
+signal testVector : std_logic_vector(0 to 127);
+signal result: boolean;
 
 signal start : std_logic := '0';
 signal Reset : std_logic := '0';
@@ -123,7 +124,6 @@ begin
             end if;
             when c0 => start <='0'; inputVTM <= x"6BC1BEE22E409F96E93D7E117393172A";
             if EN = '1' then
-                test <= x"3AD77BB40D7A3660A89ECAF32466EF97";
                 led0 <= '0';
                 nextState <= c1;
             else
@@ -371,17 +371,25 @@ begin
             end if;
             when c41 => inputMTV <= outputAdd; -- AddRoundKey => output (10th round) (42)
             if EN = '1' then
-                nextState <= isEncrypted;
+                nextState <= isAcquiring;
             else
                 nextState <= c41;
             end if;
-            when isEncrypted => testing_output <= '1'; -- is encrypted?
-            if (testing_output = '1') then
+            When isAcquiring => testOutput <= outputMTV;
+                                 testVector <= x"3AD77BB40D7A3660A89ECAF32466EF97";
+            if EN = '1' then
+                nextState <= isEncrypted;
+            else
+                nextState <= isAcquiring;
+            end if;
+            when isEncrypted => result <= testOutput = testVector; -- is encrypted?
+            if result  then
                 nextState <= isDisplaying;
             else
+                led3 <= '1';
                 nextState <= isEncrypted;
             end if;
-            when isDisplaying => start <= '0';
+            when isDisplaying => led3 <= '0'; start <= '0';
             if EN = '1' then
                 seg0 <= segment_out(0);
                 seg1 <= segment_out(1);

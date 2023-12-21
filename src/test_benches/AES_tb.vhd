@@ -14,8 +14,10 @@ component AES is port(
     Clk, EN : in std_logic;
     Rst : in std_logic;
     input : in std_logic_vector(0 to 127);
-    output : out std_logic_vector(0 to 127)
-    -- output : out matrix
+    output : out std_logic_vector(0 to 127);
+    -- debug
+    testVector : out std_logic_vector(0 to 127);
+    result : out boolean
 ); end component;
 
 signal Clk, EN : std_logic := '0';
@@ -25,11 +27,18 @@ signal input : std_logic_vector(0 to 127);
 signal output : std_logic_vector(0 to 127);
 -- signal output : matrix;
 
+signal testVector : std_logic_vector(0 to 127);
+signal result : boolean;
+
 signal resultExa : std_logic_vector(0 to 127);
 -- signal result : matrix;
 
+signal expected : boolean;
+
 begin
-    kek : AES port map(Clk => Clk, Rst => Rst, EN => EN, input => input, output => output);
+    kek : AES port map(Clk => Clk, Rst => Rst, EN => EN,
+                         input => input, output => output,
+                         testVector => testVector, result => result);
 
     clock_process : process
     begin
@@ -67,6 +76,10 @@ begin
 
         Clk <= not Clk;
         wait for 10 ns;
+        
+        expected <= resultExa = output;
+
+        wait for 30 ns;
     end process;
 
     EN_process : process

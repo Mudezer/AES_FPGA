@@ -6,10 +6,10 @@ use ieee.numeric_std.all;
 entity VectorComparison is port(
     clk: in std_logic;
     btnC : in std_logic;
-
+    btnR : in std_logic;
     led0 : out std_logic;
     led1 : out std_logic;
-    led2 : out std_logic;
+    led2 : out std_logic
 ); end VectorComparison;
 
 
@@ -23,11 +23,11 @@ signal centralButton : std_logic := '0';
 -- signal leftButton : std_logic := '0';
 
 signal start : std_logic := '0';
-
+signal Reset : std_logic := '0';
 signal result : boolean ; 
 
-type statetype is (init, assign , compute, compare , display);
-signal state currentState, nextState : statetype;
+type statetype is (init, assign , compute, display);
+signal currentState, nextState : statetype;
 
 
 begin
@@ -39,6 +39,8 @@ begin
                 led0 <= '0';
                 nextState <= assign;
             else
+                led1 <= '0';
+                led2 <= '0';
                 nextState <= init;
             end if;
             when assign => input <= x"3AD77BB40D7A3660A89ECAF32466EF97";
@@ -49,7 +51,7 @@ begin
                 nextState <= assign;
             end if;
             when compute => result <= input = output;
-            if result then 
+            if result then
                 nextState <= display;
             else
                 led1 <= '1';

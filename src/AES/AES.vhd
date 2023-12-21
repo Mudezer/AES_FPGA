@@ -9,7 +9,11 @@ entity AES is port(
     Clk, EN : in std_logic;
     Rst : in std_logic;
     input : in std_logic_vector(0 to 127);
-    output : out std_logic_vector(0 to 127)
+    output : out std_logic_vector(0 to 127);
+
+    -- debug
+    testVector : out std_logic_vector(0 to 127);
+    result : out boolean
 ); end AES;
 
 
@@ -59,7 +63,7 @@ type statetype is ( -- board states
                     c31,c32,c33,c34, -- 8th round
                     c35,c36,c37,c38, -- 9th round
                     c39,c40,c41, -- last AddRoundKey
-                    c42); -- matrix to vector
+                    c42,c43,c44); -- matrix to vector
 
 signal currentState, nextState : statetype;
 
@@ -69,6 +73,11 @@ signal outputAdd, outputSub, outputShift, outputMix, outputVTM : matrix;
 signal inputKey : std_logic_vector(0 to 127);
 signal inputVTM : std_logic_vector(0 to 127);
 signal outputMTV : std_logic_vector(0 to 127);
+
+-- debug
+signal uit : std_logic_vector(0 to 127);
+signal test : std_logic_vector(0 to 127);
+signal res : boolean; 
 
 begin
     vtm : VectorToMatrix port map(input => inputVTM, output => outputVTM);
@@ -333,12 +342,23 @@ begin
             else
                 nextState <= c41;
             end if;
-            when c42 => output <= outputMTV;
+            when c42 => uit <= outputMTV; test <= x"3AD77BB40D7A3660A89ECAF32466EF97";
             if EN = '1' then
-                nextState <= c0;
+                -- debug
+                output <= uit;
+                testVector <= test;
+                --
+                nextState <= c43;
             else
                 nextState <= c42;
             end if;
+            when c43 => res <= (uit = test); result <= (uit = test);
+            if res then
+                nextState <= c0;
+            else
+                nextState <= c43;
+            end if; 
+            when others => nextState <= c0;
         end case;
     end process fsm1;
 

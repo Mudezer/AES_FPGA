@@ -29,6 +29,7 @@ begin
                 when "01" => ANODE_ACT <= "1011"; SEG_BCD <= "01";
                 when "10" => ANODE_ACT <= "1101"; SEG_BCD <= "10";
                 when "11" => ANODE_ACT <= "1110"; SEG_BCD <= "11";
+                when others => ANODE_ACT <= "1111"; SEG_BCD <= "11";
         end case;
     end process;
 end arch;

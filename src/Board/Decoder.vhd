@@ -18,6 +18,7 @@ architecture arch of Decoder is
                 when "01" => SEG_OUT <= "0000110";
                 when "10" => SEG_OUT <= "0010010";
                 when "11" => SEG_OUT <= "1111111";
+                when others => SEG_OUT <= "0000000";
             end case;
         end process;
 end arch;

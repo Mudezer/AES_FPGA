@@ -14,6 +14,12 @@ architecture arch of VectorCompare is
 signal result : boolean;
 
 begin
-    result <= (input = expected);
-    output <= result;
+    proc : process
+    begin
+        if (input = expected) then
+            output <= TRUE;
+        else
+            output <= FALSE;
+        end if;
+    end process proc;
 end arch;

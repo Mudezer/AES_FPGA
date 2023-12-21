@@ -36,7 +36,7 @@ signal resultExa : std_logic_vector(0 to 127);
 signal expected : boolean;
 
 begin
-    kek : AES port map(Clk => Clk, Rst => Rst, EN => EN,
+    uut : AES port map(Clk => Clk, Rst => Rst, EN => EN,
                          input => input, output => output,
                          testVector => testVector, result => result);
 

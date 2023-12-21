@@ -8,9 +8,10 @@ use xil_defaultlib.matpack.all;
 entity AESBoard is port(
     -- inputs
     clk : in std_logic;
-    btnR : in std_logic;
-    btnC : in std_logic;
+    btnR : in std_logic; -- reset
+    btnC : in std_logic; -- start
 
+    -- sauvezMoi: out std_logic_vector(0 to 127);
     -- Segment Display
     led0 : out std_logic;
     led3 : out std_logic;
@@ -67,6 +68,10 @@ component SegmentMaster is port(
     ANODE_ACT : out std_logic_vector(3 downto 0)
 ); end component;
 
+component VectorCompare is port(
+    input, expected : in std_logic_vector(0 to 127);
+    output : out boolean
+); end component;
 
 type statetype is ( isInit, isAcquiring,isEncrypted, isDisplaying, -- board states
                     c0, -- vector to matrix
@@ -92,6 +97,10 @@ signal inputVTM : std_logic_vector(0 to 127);
 signal outputMTV : std_logic_vector(0 to 127);
 signal testOutput : std_logic_vector(0 to 127);
 signal testVector : std_logic_vector(0 to 127);
+signal inputCompare : std_logic_vector(0 to 127);
+signal outputCompare : boolean;
+-- signal testOutput : std_logic;
+-- signal testVector : std_logic;
 signal result: boolean;
 
 signal start : std_logic := '0';
@@ -112,6 +121,7 @@ begin
     mix : MixColumns port map(input => inputMix, output => outputMix);
     add : AddRoundKey port map(input => inputAdd, key => inputKey, output => outputAdd);
     segment : SegmentMaster port map(CLK_100MHZ => clk, SEG_OUT => segment_out, ANODE_ACT => anode_active);
+    compare : VectorCompare port map(input => inputCompare, expected => testVector, output => outputCompare);
 
     fsm1 : process(EN, currentState, start)
     begin
@@ -375,22 +385,17 @@ begin
             else
                 nextState <= c41;
             end if;
-            When isAcquiring => testOutput <= outputMTV;
-                                 testVector <= x"3AD77BB40D7A3660A89ECAF32466EF97";
+            When isAcquiring => inputCompare <= outputMTV; testVector <= x"3AD77BB40D7A3660A89ECAF32466EF97";--testOutput <= outputMTV; testVector <= x"3AD77BB40D7A3660A89ECAF32466EF97";
             if EN = '1' then
+                -- sauvezMoi <= testOutput;
                 nextState <= isEncrypted;
             else
                 nextState <= isAcquiring;
             end if;
-            when isEncrypted => result <= testOutput = testVector; -- is encrypted?
+            when isEncrypted => result <= outputCompare; -- is encrypted?
             if result  then
-                nextState <= isDisplaying;
-            else
-                led3 <= '1';
-                nextState <= isEncrypted;
-            end if;
-            when isDisplaying => led3 <= '0'; start <= '0';
-            if EN = '1' then
+                led3 <= '0';
+                start <= '0';
                 seg0 <= segment_out(0);
                 seg1 <= segment_out(1);
                 seg2 <= segment_out(2);
@@ -398,14 +403,24 @@ begin
                 seg4 <= segment_out(4);
                 seg5 <= segment_out(5);
                 seg6 <= segment_out(6);
+
                 an0 <= anode_active(0);
                 an1 <= anode_active(1);
                 an2 <= anode_active(2);
                 an3 <= anode_active(3);
-                nextState <= isDisplaying;
+
+                nextState <= isEncrypted;
             else
-                nextState <= isInit;
+                led3 <= '1';
+                nextState <= isEncrypted;
             end if;
+            -- when isDisplaying => led3 <= '0'; start <= '0';
+            -- if EN = '1' then
+                
+            --     nextState <= isDisplaying;
+            -- else
+            --     nextState <= isInit;
+            -- end if;
         end case;
     end process fsm1;
 

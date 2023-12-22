@@ -14,17 +14,9 @@ entity AESBoard is port(
     -- Segment Display
     led0 : out std_logic;
     led3 : out std_logic;
-    seg0 : out std_logic;
-    seg1 : out std_logic;
-    seg2 : out std_logic; 
-    seg3 : out std_logic;
-    seg4 : out std_logic;
-    seg5 : out std_logic;
-    seg6 : out std_logic;
-    an0 : out std_logic;
-    an1 : out std_logic;
-    an2 : out std_logic;
-    an3 : out std_logic
+    seg : out std_logic_vector(6 downto 0);
+    an : out std_logic_vector(3 downto 0)
+
 ); end AESBoard;
 
 
@@ -119,7 +111,7 @@ signal display : std_logic := '0';
 signal EN : std_logic := '1';
 signal displays: std_logic := '0';
 
-
+-- signals to control the segment display
 signal segment_out : std_logic_vector(6 downto 0);
 signal anode_active : std_logic_vector(3 downto 0);
 
@@ -133,7 +125,7 @@ begin
     segment : SegmentMaster port map(CLK_100MHZ => clk, SEG_OUT => segment_out, ANODE_ACT => anode_active);
     --compare : VectorCompare port map(input => inputCompare, expected => testVector, output => outputCompare);
 
-    fsm1 : process(EN, currentState, start)
+    fsm1 : process(EN, currentState, start, centralButton, outputVTM, outputAdd, outputSub, outputShift, outputMix, testOutput, testVector, result, segment_out, anode_active)
     begin
         case currentState is
             when isInit => led3 <= '0'; led0 <= '1'; start <= centralButton;
@@ -155,7 +147,7 @@ begin
             else
                 nextState <= c1;
             end if;
-            when c2 => inputSub <= outputAdd; -- AddRoundKey => SubBytes (0th round) (2)
+            when c2 => inputSub <= outputAdd;-- AddRoundKey => SubBytes (0th round) (2)
             if EN = '1' then
                 nextState <= c3;
             else
@@ -406,23 +398,14 @@ begin
             if result  then
                 led3 <= '0';
                 start <= '0';
-                seg0 <= segment_out(0);
-                seg1 <= segment_out(1);
-                seg2 <= segment_out(2);
-                seg3 <= segment_out(3);
-                seg4 <= segment_out(4);
-                seg5 <= segment_out(5);
-                seg6 <= segment_out(6);
-
-                an0 <= anode_active(0);
-                an1 <= anode_active(1);
-                an2 <= anode_active(2);
-                an3 <= anode_active(3);
+                seg <= segment_out;
+                an <= anode_active;
                 nextState <= isEncrypted;
             else
                 led3 <= '1';
                 nextState <= isEncrypted;
             end if;
+            when others => nextState <= isInit;
         end case;
     end process fsm1;
 

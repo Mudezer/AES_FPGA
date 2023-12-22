@@ -1,0 +1,628 @@
+
+*** Running vivado
+    with args -log AESBoard.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source AESBoard.tcl
+
+
+Commande ECHO d‚sactiv‚e.
+Commande ECHO d‚sactiv‚e.
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source AESBoard.tcl -notrace
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 457.344 ; gain = 184.117
+Command: read_checkpoint -auto_incremental -incremental C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/Vivado_projects/AES_Final/AES_Final.srcs/utils_1/imports/synth_1/AESBoard.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/Vivado_projects/AES_Final/AES_Final.srcs/utils_1/imports/synth_1/AESBoard.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top AESBoard -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 10652
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1293.453 ; gain = 440.863
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'AESBoard' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:23]
+INFO: [Synth 8-3491] module 'VectorToMatrix' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/VectorToMatrix_v2.vhd:8' bound to instance 'vtm' of component 'VectorToMatrix' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:119]
+INFO: [Synth 8-638] synthesizing module 'VectorToMatrix' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/VectorToMatrix_v2.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'VectorToMatrix' (0#1) [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/VectorToMatrix_v2.vhd:13]
+INFO: [Synth 8-3491] module 'MatrixToVector' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MatrixToVector_v2.vhd:9' bound to instance 'mtv' of component 'MatrixToVector' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:120]
+INFO: [Synth 8-638] synthesizing module 'MatrixToVector' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MatrixToVector_v2.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'MatrixToVector' (0#1) [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MatrixToVector_v2.vhd:14]
+INFO: [Synth 8-3491] module 'SubBytes' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/SubBytes_v2.vhd:9' bound to instance 'sub' of component 'SubBytes' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:121]
+INFO: [Synth 8-638] synthesizing module 'SubBytes' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/SubBytes_v2.vhd:14]
+INFO: [Synth 8-3491] module 'S_box' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/S_box.vhd:4' bound to instance 'box1' of component 'S_box' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/SubBytes_v2.vhd:32]
+INFO: [Synth 8-638] synthesizing module 'S_box' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/S_box.vhd:9]
+INFO: [Synth 8-226] default block is never used [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/S_box.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'S_box' (0#1) [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/S_box.vhd:9]
+INFO: [Synth 8-3491] module 'S_box' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/S_box.vhd:4' bound to instance 'box1' of component 'S_box' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/SubBytes_v2.vhd:32]
+INFO: [Synth 8-3491] module 'S_box' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/S_box.vhd:4' bound to instance 'box1' of component 'S_box' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/SubBytes_v2.vhd:32]
+INFO: [Synth 8-3491] module 'S_box' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/S_box.vhd:4' bound to instance 'box1' of component 'S_box' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/SubBytes_v2.vhd:32]
+INFO: [Synth 8-3491] module 'S_box' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/S_box.vhd:4' bound to instance 'box2' of component 'S_box' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/SubBytes_v2.vhd:38]
+INFO: [Synth 8-3491] module 'S_box' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/S_box.vhd:4' bound to instance 'box2' of component 'S_box' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/SubBytes_v2.vhd:38]
+INFO: [Synth 8-3491] module 'S_box' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/S_box.vhd:4' bound to instance 'box2' of component 'S_box' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/SubBytes_v2.vhd:38]
+INFO: [Synth 8-3491] module 'S_box' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/S_box.vhd:4' bound to instance 'box2' of component 'S_box' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/SubBytes_v2.vhd:38]
+INFO: [Synth 8-3491] module 'S_box' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/S_box.vhd:4' bound to instance 'box3' of component 'S_box' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/SubBytes_v2.vhd:44]
+INFO: [Synth 8-3491] module 'S_box' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/S_box.vhd:4' bound to instance 'box3' of component 'S_box' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/SubBytes_v2.vhd:44]
+INFO: [Synth 8-3491] module 'S_box' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/S_box.vhd:4' bound to instance 'box3' of component 'S_box' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/SubBytes_v2.vhd:44]
+INFO: [Synth 8-3491] module 'S_box' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/S_box.vhd:4' bound to instance 'box3' of component 'S_box' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/SubBytes_v2.vhd:44]
+INFO: [Synth 8-3491] module 'S_box' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/S_box.vhd:4' bound to instance 'box4' of component 'S_box' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/SubBytes_v2.vhd:50]
+INFO: [Synth 8-3491] module 'S_box' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/S_box.vhd:4' bound to instance 'box4' of component 'S_box' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/SubBytes_v2.vhd:50]
+INFO: [Synth 8-3491] module 'S_box' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/S_box.vhd:4' bound to instance 'box4' of component 'S_box' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/SubBytes_v2.vhd:50]
+INFO: [Synth 8-3491] module 'S_box' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/S_box.vhd:4' bound to instance 'box4' of component 'S_box' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/SubBytes_v2.vhd:50]
+INFO: [Synth 8-256] done synthesizing module 'SubBytes' (0#1) [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/SubBytes_v2.vhd:14]
+INFO: [Synth 8-3491] module 'ShiftRows' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/ShiftRows_v2.vhd:9' bound to instance 'shift' of component 'ShiftRows' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:122]
+INFO: [Synth 8-638] synthesizing module 'ShiftRows' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/ShiftRows_v2.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'ShiftRows' (0#1) [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/ShiftRows_v2.vhd:15]
+INFO: [Synth 8-3491] module 'MixColumns' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:9' bound to instance 'mix' of component 'MixColumns' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:123]
+INFO: [Synth 8-638] synthesizing module 'MixColumns' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:14]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul2.vhd:4' bound to instance 'lut_mul2_1' of component 'LUT_mul2' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:34]
+INFO: [Synth 8-638] synthesizing module 'LUT_mul2' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul2.vhd:9]
+INFO: [Synth 8-226] default block is never used [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul2.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'LUT_mul2' (0#1) [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul2.vhd:9]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul3.vhd:6' bound to instance 'lut_mul3_1' of component 'LUT_mul3' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:35]
+INFO: [Synth 8-638] synthesizing module 'LUT_mul3' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul3.vhd:12]
+INFO: [Synth 8-226] default block is never used [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul3.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'LUT_mul3' (0#1) [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul3.vhd:12]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul2.vhd:4' bound to instance 'lut_mul2_1' of component 'LUT_mul2' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:34]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul3.vhd:6' bound to instance 'lut_mul3_1' of component 'LUT_mul3' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:35]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul2.vhd:4' bound to instance 'lut_mul2_1' of component 'LUT_mul2' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:34]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul3.vhd:6' bound to instance 'lut_mul3_1' of component 'LUT_mul3' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:35]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul2.vhd:4' bound to instance 'lut_mul2_1' of component 'LUT_mul2' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:34]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul3.vhd:6' bound to instance 'lut_mul3_1' of component 'LUT_mul3' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:35]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul2.vhd:4' bound to instance 'lut_mul2_2' of component 'LUT_mul2' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:41]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul3.vhd:6' bound to instance 'lut_mul3_2' of component 'LUT_mul3' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:42]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul2.vhd:4' bound to instance 'lut_mul2_2' of component 'LUT_mul2' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:41]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul3.vhd:6' bound to instance 'lut_mul3_2' of component 'LUT_mul3' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:42]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul2.vhd:4' bound to instance 'lut_mul2_2' of component 'LUT_mul2' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:41]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul3.vhd:6' bound to instance 'lut_mul3_2' of component 'LUT_mul3' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:42]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul2.vhd:4' bound to instance 'lut_mul2_2' of component 'LUT_mul2' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:41]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul3.vhd:6' bound to instance 'lut_mul3_2' of component 'LUT_mul3' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:42]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul2.vhd:4' bound to instance 'lut_mul2_3' of component 'LUT_mul2' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:48]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul3.vhd:6' bound to instance 'lut_mul3_3' of component 'LUT_mul3' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:49]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul2.vhd:4' bound to instance 'lut_mul2_3' of component 'LUT_mul2' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:48]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul3.vhd:6' bound to instance 'lut_mul3_3' of component 'LUT_mul3' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:49]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul2.vhd:4' bound to instance 'lut_mul2_3' of component 'LUT_mul2' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:48]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul3.vhd:6' bound to instance 'lut_mul3_3' of component 'LUT_mul3' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:49]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul2.vhd:4' bound to instance 'lut_mul2_3' of component 'LUT_mul2' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:48]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul3.vhd:6' bound to instance 'lut_mul3_3' of component 'LUT_mul3' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:49]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul2.vhd:4' bound to instance 'lut_mul2_4' of component 'LUT_mul2' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:55]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul3.vhd:6' bound to instance 'lut_mul3_4' of component 'LUT_mul3' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:56]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul2.vhd:4' bound to instance 'lut_mul2_4' of component 'LUT_mul2' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:55]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul3.vhd:6' bound to instance 'lut_mul3_4' of component 'LUT_mul3' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:56]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul2.vhd:4' bound to instance 'lut_mul2_4' of component 'LUT_mul2' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:55]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul3.vhd:6' bound to instance 'lut_mul3_4' of component 'LUT_mul3' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:56]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul2.vhd:4' bound to instance 'lut_mul2_4' of component 'LUT_mul2' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:55]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul3.vhd:6' bound to instance 'lut_mul3_4' of component 'LUT_mul3' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:56]
+INFO: [Synth 8-256] done synthesizing module 'MixColumns' (0#1) [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd:14]
+INFO: [Synth 8-3491] module 'AddRoundKey' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AddRoundKey_v2.vhd:10' bound to instance 'add' of component 'AddRoundKey' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:124]
+INFO: [Synth 8-638] synthesizing module 'AddRoundKey' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AddRoundKey_v2.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'AddRoundKey' (0#1) [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AddRoundKey_v2.vhd:17]
+INFO: [Synth 8-3491] module 'SegmentMaster' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/SegmentMaster.vhd:5' bound to instance 'segment' of component 'SegmentMaster' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:125]
+INFO: [Synth 8-638] synthesizing module 'SegmentMaster' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/SegmentMaster.vhd:11]
+INFO: [Synth 8-3491] module 'Anode' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/Anode.vhd:5' bound to instance 'uu1' of component 'Anode' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/SegmentMaster.vhd:27]
+INFO: [Synth 8-638] synthesizing module 'Anode' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/Anode.vhd:11]
+INFO: [Synth 8-226] default block is never used [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/Anode.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'Anode' (0#1) [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/Anode.vhd:11]
+INFO: [Synth 8-3491] module 'Decoder' declared at 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/Decoder.vhd:6' bound to instance 'uu2' of component 'Decoder' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/SegmentMaster.vhd:28]
+INFO: [Synth 8-638] synthesizing module 'Decoder' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/Decoder.vhd:11]
+INFO: [Synth 8-226] default block is never used [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/Decoder.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'Decoder' (0#1) [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/Decoder.vhd:11]
+INFO: [Synth 8-256] done synthesizing module 'SegmentMaster' (0#1) [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/SegmentMaster.vhd:11]
+INFO: [Synth 8-256] done synthesizing module 'AESBoard' (0#1) [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:23]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1432.699 ; gain = 580.109
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1432.699 ; gain = 580.109
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1432.699 ; gain = 580.109
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1432.699 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/Basys-3-Master.xdc]
+Finished Parsing XDC File [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/Basys-3-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/Basys-3-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/AESBoard_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/AESBoard_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1541.480 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Le chemin d'accŠs sp‚cifi‚ est introuvable.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1541.480 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1541.480 ; gain = 688.891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1541.480 ; gain = 688.891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1541.480 ; gain = 688.891
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'currentState_reg' in module 'AESBoard'
+WARNING: [Synth 8-327] inferring latch for variable 'led0_reg' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:131]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  isinit | 000000000000000000000000000000000000000000001 |                           000000
+                      c0 | 000000000000000000000000000000000000000000010 |                           000011
+                      c1 | 000000000000000000000000000000000000000000100 |                           000100
+                      c2 | 000000000000000000000000000000000000000001000 |                           000101
+                      c3 | 000000000000000000000000000000000000000010000 |                           000110
+                      c4 | 000000000000000000000000000000000000000100000 |                           000111
+                      c5 | 000000000000000000000000000000000000001000000 |                           001000
+                      c6 | 000000000000000000000000000000000000010000000 |                           001001
+                      c7 | 000000000000000000000000000000000000100000000 |                           001010
+                      c8 | 000000000000000000000000000000000001000000000 |                           001011
+                      c9 | 000000000000000000000000000000000010000000000 |                           001100
+                     c10 | 000000000000000000000000000000000100000000000 |                           001101
+                     c11 | 000000000000000000000000000000001000000000000 |                           001110
+                     c12 | 000000000000000000000000000000010000000000000 |                           001111
+                     c13 | 000000000000000000000000000000100000000000000 |                           010000
+                     c14 | 000000000000000000000000000001000000000000000 |                           010001
+                     c15 | 000000000000000000000000000010000000000000000 |                           010010
+                     c16 | 000000000000000000000000000100000000000000000 |                           010011
+                     c17 | 000000000000000000000000001000000000000000000 |                           010100
+                     c18 | 000000000000000000000000010000000000000000000 |                           010101
+                     c19 | 000000000000000000000000100000000000000000000 |                           010110
+                     c20 | 000000000000000000000001000000000000000000000 |                           010111
+                     c21 | 000000000000000000000010000000000000000000000 |                           011000
+                     c22 | 000000000000000000000100000000000000000000000 |                           011001
+                     c23 | 000000000000000000001000000000000000000000000 |                           011010
+                     c24 | 000000000000000000010000000000000000000000000 |                           011011
+                     c25 | 000000000000000000100000000000000000000000000 |                           011100
+                     c26 | 000000000000000001000000000000000000000000000 |                           011101
+                     c27 | 000000000000000010000000000000000000000000000 |                           011110
+                     c28 | 000000000000000100000000000000000000000000000 |                           011111
+                     c29 | 000000000000001000000000000000000000000000000 |                           100000
+                     c30 | 000000000000010000000000000000000000000000000 |                           100001
+                     c31 | 000000000000100000000000000000000000000000000 |                           100010
+                     c32 | 000000000001000000000000000000000000000000000 |                           100011
+                     c33 | 000000000010000000000000000000000000000000000 |                           100100
+                     c34 | 000000000100000000000000000000000000000000000 |                           100101
+                     c35 | 000000001000000000000000000000000000000000000 |                           100110
+                     c36 | 000000010000000000000000000000000000000000000 |                           100111
+                     c37 | 000000100000000000000000000000000000000000000 |                           101000
+                     c38 | 000001000000000000000000000000000000000000000 |                           101001
+                     c39 | 000010000000000000000000000000000000000000000 |                           101010
+                     c40 | 000100000000000000000000000000000000000000000 |                           101011
+                     c41 | 001000000000000000000000000000000000000000000 |                           101100
+             isacquiring | 010000000000000000000000000000000000000000000 |                           000001
+             isencrypted | 100000000000000000000000000000000000000000000 |                           000010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'currentState_reg' using encoding 'one-hot' in module 'AESBoard'
+WARNING: [Synth 8-327] inferring latch for variable 'led3_reg' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:131]
+WARNING: [Synth 8-327] inferring latch for variable 'seg_reg' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:401]
+WARNING: [Synth 8-327] inferring latch for variable 'an_reg' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:402]
+WARNING: [Synth 8-327] inferring latch for variable 'result_reg' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:397]
+WARNING: [Synth 8-327] inferring latch for variable 'start_reg' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:131]
+WARNING: [Synth 8-327] inferring latch for variable 'testOutput_reg' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:390]
+WARNING: [Synth 8-327] inferring latch for variable 'inputVTM_reg' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:119]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMix_reg[0][0]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:123]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMix_reg[0][1]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:123]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMix_reg[0][2]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:123]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMix_reg[0][3]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:123]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMix_reg[1][0]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:123]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMix_reg[1][1]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:123]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMix_reg[1][2]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:123]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMix_reg[1][3]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:123]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMix_reg[2][0]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:123]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMix_reg[2][1]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:123]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMix_reg[2][2]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:123]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMix_reg[2][3]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:123]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMix_reg[3][0]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:123]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMix_reg[3][1]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:123]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMix_reg[3][2]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:123]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMix_reg[3][3]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:123]
+WARNING: [Synth 8-327] inferring latch for variable 'inputShift_reg[0][0]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:122]
+WARNING: [Synth 8-327] inferring latch for variable 'inputShift_reg[0][1]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:122]
+WARNING: [Synth 8-327] inferring latch for variable 'inputShift_reg[0][2]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:122]
+WARNING: [Synth 8-327] inferring latch for variable 'inputShift_reg[0][3]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:122]
+WARNING: [Synth 8-327] inferring latch for variable 'inputShift_reg[1][0]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:122]
+WARNING: [Synth 8-327] inferring latch for variable 'inputShift_reg[1][1]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:122]
+WARNING: [Synth 8-327] inferring latch for variable 'inputShift_reg[1][2]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:122]
+WARNING: [Synth 8-327] inferring latch for variable 'inputShift_reg[1][3]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:122]
+WARNING: [Synth 8-327] inferring latch for variable 'inputShift_reg[2][0]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:122]
+WARNING: [Synth 8-327] inferring latch for variable 'inputShift_reg[2][1]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:122]
+WARNING: [Synth 8-327] inferring latch for variable 'inputShift_reg[2][2]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:122]
+WARNING: [Synth 8-327] inferring latch for variable 'inputShift_reg[2][3]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:122]
+WARNING: [Synth 8-327] inferring latch for variable 'inputShift_reg[3][0]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:122]
+WARNING: [Synth 8-327] inferring latch for variable 'inputShift_reg[3][1]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:122]
+WARNING: [Synth 8-327] inferring latch for variable 'inputShift_reg[3][2]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:122]
+WARNING: [Synth 8-327] inferring latch for variable 'inputShift_reg[3][3]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:122]
+WARNING: [Synth 8-327] inferring latch for variable 'inputSub_reg[0][0]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:121]
+WARNING: [Synth 8-327] inferring latch for variable 'inputSub_reg[0][1]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:121]
+WARNING: [Synth 8-327] inferring latch for variable 'inputSub_reg[0][2]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:121]
+WARNING: [Synth 8-327] inferring latch for variable 'inputSub_reg[0][3]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:121]
+WARNING: [Synth 8-327] inferring latch for variable 'inputSub_reg[1][0]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:121]
+WARNING: [Synth 8-327] inferring latch for variable 'inputSub_reg[1][1]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:121]
+WARNING: [Synth 8-327] inferring latch for variable 'inputSub_reg[1][2]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:121]
+WARNING: [Synth 8-327] inferring latch for variable 'inputSub_reg[1][3]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:121]
+WARNING: [Synth 8-327] inferring latch for variable 'inputSub_reg[2][0]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:121]
+WARNING: [Synth 8-327] inferring latch for variable 'inputSub_reg[2][1]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:121]
+WARNING: [Synth 8-327] inferring latch for variable 'inputSub_reg[2][2]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:121]
+WARNING: [Synth 8-327] inferring latch for variable 'inputSub_reg[2][3]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:121]
+WARNING: [Synth 8-327] inferring latch for variable 'inputSub_reg[3][0]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:121]
+WARNING: [Synth 8-327] inferring latch for variable 'inputSub_reg[3][1]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:121]
+WARNING: [Synth 8-327] inferring latch for variable 'inputSub_reg[3][2]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:121]
+WARNING: [Synth 8-327] inferring latch for variable 'inputSub_reg[3][3]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:121]
+WARNING: [Synth 8-327] inferring latch for variable 'inputAdd_reg[0][0]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:124]
+WARNING: [Synth 8-327] inferring latch for variable 'inputAdd_reg[0][1]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:124]
+WARNING: [Synth 8-327] inferring latch for variable 'inputAdd_reg[0][2]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:124]
+WARNING: [Synth 8-327] inferring latch for variable 'inputAdd_reg[0][3]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:124]
+WARNING: [Synth 8-327] inferring latch for variable 'inputAdd_reg[1][0]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:124]
+WARNING: [Synth 8-327] inferring latch for variable 'inputAdd_reg[1][1]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:124]
+WARNING: [Synth 8-327] inferring latch for variable 'inputAdd_reg[1][2]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:124]
+WARNING: [Synth 8-327] inferring latch for variable 'inputAdd_reg[1][3]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:124]
+WARNING: [Synth 8-327] inferring latch for variable 'inputAdd_reg[2][0]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:124]
+WARNING: [Synth 8-327] inferring latch for variable 'inputAdd_reg[2][1]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:124]
+WARNING: [Synth 8-327] inferring latch for variable 'inputAdd_reg[2][2]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:124]
+WARNING: [Synth 8-327] inferring latch for variable 'inputAdd_reg[2][3]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:124]
+WARNING: [Synth 8-327] inferring latch for variable 'inputAdd_reg[3][0]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:124]
+WARNING: [Synth 8-327] inferring latch for variable 'inputAdd_reg[3][1]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:124]
+WARNING: [Synth 8-327] inferring latch for variable 'inputAdd_reg[3][2]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:124]
+WARNING: [Synth 8-327] inferring latch for variable 'inputAdd_reg[3][3]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:124]
+WARNING: [Synth 8-327] inferring latch for variable 'inputKey_reg' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:124]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMTV_reg[0][0]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:120]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMTV_reg[0][1]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:120]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMTV_reg[0][2]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:120]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMTV_reg[0][3]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:120]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMTV_reg[1][0]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:120]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMTV_reg[1][1]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:120]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMTV_reg[1][2]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:120]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMTV_reg[1][3]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:120]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMTV_reg[2][0]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:120]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMTV_reg[2][1]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:120]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMTV_reg[2][2]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:120]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMTV_reg[2][3]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:120]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMTV_reg[3][0]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:120]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMTV_reg[3][1]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:120]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMTV_reg[3][2]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:120]
+WARNING: [Synth 8-327] inferring latch for variable 'inputMTV_reg[3][3]' [C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd:120]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1541.480 ; gain = 688.891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---XORs : 
+	   4 Input      8 Bit         XORs := 16    
+	   2 Input      1 Bit         XORs := 128   
++---Registers : 
+	                1 Bit    Registers := 2     
++---Muxes : 
+	  45 Input  128 Bit        Muxes := 1     
+	  45 Input   45 Bit        Muxes := 1     
+	   2 Input   45 Bit        Muxes := 1     
+	  45 Input    8 Bit        Muxes := 16    
+	   4 Input    7 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 1     
+	  45 Input    1 Bit        Muxes := 10    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3332] Sequential element (led3_reg) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (result_reg) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (testOutput_reg) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[0]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[1]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[2]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[3]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[4]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[5]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[6]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[7]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[8]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[9]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[10]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[11]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[12]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[13]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[14]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[15]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[16]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[17]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[18]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[19]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[20]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[21]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[22]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[23]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[24]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[25]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[26]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[27]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[28]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[29]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[30]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[31]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[32]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[33]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[34]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[35]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[36]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[37]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[38]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[39]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[40]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[41]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[42]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[43]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[44]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[45]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[46]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[47]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[48]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[49]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[50]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[51]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[52]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[53]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[54]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[55]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[56]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[57]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[58]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[59]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[60]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[61]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[62]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[63]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[64]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[65]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[66]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[67]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[68]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[69]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[70]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[71]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[72]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[73]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[74]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[75]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[76]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[77]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[78]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[79]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[80]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[81]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[82]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[83]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[84]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[85]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[86]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[87]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[88]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[89]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[90]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[91]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[92]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[93]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[94]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[95]) is unused and will be removed from module AESBoard.
+WARNING: [Synth 8-3332] Sequential element (inputVTM_reg[96]) is unused and will be removed from module AESBoard.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 1541.480 ; gain = 688.891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+-----------------------------------------------+---------------+----------------+
+|Module Name | RTL Object                                    | Depth x Width | Implemented As | 
++------------+-----------------------------------------------+---------------+----------------+
+|S_box       | byte_out                                      | 256x8         | LUT            | 
+|LUT_mul2    | byte_out                                      | 256x8         | LUT            | 
+|LUT_mul3    | byte_out                                      | 256x8         | LUT            | 
+|SubBytes    | box_gen[0].box_row_one.box1/byte_out          | 256x8         | LUT            | 
+|SubBytes    | box_gen[1].box_row_one.box1/byte_out          | 256x8         | LUT            | 
+|SubBytes    | box_gen[2].box_row_one.box1/byte_out          | 256x8         | LUT            | 
+|SubBytes    | box_gen[3].box_row_one.box1/byte_out          | 256x8         | LUT            | 
+|SubBytes    | box_gen[5].box_row_two.box2/byte_out          | 256x8         | LUT            | 
+|SubBytes    | box_gen[6].box_row_two.box2/byte_out          | 256x8         | LUT            | 
+|SubBytes    | box_gen[7].box_row_two.box2/byte_out          | 256x8         | LUT            | 
+|SubBytes    | box_gen[8].box_row_three.box3/byte_out        | 256x8         | LUT            | 
+|SubBytes    | box_gen[9].box_row_three.box3/byte_out        | 256x8         | LUT            | 
+|SubBytes    | box_gen[10].box_row_three.box3/byte_out       | 256x8         | LUT            | 
+|SubBytes    | box_gen[11].box_row_three.box3/byte_out       | 256x8         | LUT            | 
+|SubBytes    | box_gen[12].box_row_four.box4/byte_out        | 256x8         | LUT            | 
+|SubBytes    | box_gen[13].box_row_four.box4/byte_out        | 256x8         | LUT            | 
+|SubBytes    | box_gen[14].box_row_four.box4/byte_out        | 256x8         | LUT            | 
+|SubBytes    | box_gen[15].box_row_four.box4/byte_out        | 256x8         | LUT            | 
+|MixColumns  | mix_gen[0].mix_row_one.lut_mul2_1/byte_out    | 256x8         | LUT            | 
+|MixColumns  | mix_gen[1].mix_row_one.lut_mul2_1/byte_out    | 256x8         | LUT            | 
+|MixColumns  | mix_gen[1].mix_row_one.lut_mul3_1/byte_out    | 256x8         | LUT            | 
+|MixColumns  | mix_gen[2].mix_row_one.lut_mul2_1/byte_out    | 256x8         | LUT            | 
+|MixColumns  | mix_gen[2].mix_row_one.lut_mul3_1/byte_out    | 256x8         | LUT            | 
+|MixColumns  | mix_gen[3].mix_row_one.lut_mul2_1/byte_out    | 256x8         | LUT            | 
+|MixColumns  | mix_gen[3].mix_row_one.lut_mul3_1/byte_out    | 256x8         | LUT            | 
+|MixColumns  | mix_gen[4].mix_row_two.lut_mul2_2/byte_out    | 256x8         | LUT            | 
+|MixColumns  | mix_gen[4].mix_row_two.lut_mul3_2/byte_out    | 256x8         | LUT            | 
+|MixColumns  | mix_gen[5].mix_row_two.lut_mul2_2/byte_out    | 256x8         | LUT            | 
+|MixColumns  | mix_gen[5].mix_row_two.lut_mul3_2/byte_out    | 256x8         | LUT            | 
+|MixColumns  | mix_gen[6].mix_row_two.lut_mul2_2/byte_out    | 256x8         | LUT            | 
+|MixColumns  | mix_gen[6].mix_row_two.lut_mul3_2/byte_out    | 256x8         | LUT            | 
+|MixColumns  | mix_gen[7].mix_row_two.lut_mul2_2/byte_out    | 256x8         | LUT            | 
+|MixColumns  | mix_gen[7].mix_row_two.lut_mul3_2/byte_out    | 256x8         | LUT            | 
+|MixColumns  | mix_gen[8].mix_row_three.lut_mul2_3/byte_out  | 256x8         | LUT            | 
+|MixColumns  | mix_gen[8].mix_row_three.lut_mul3_3/byte_out  | 256x8         | LUT            | 
+|MixColumns  | mix_gen[9].mix_row_three.lut_mul2_3/byte_out  | 256x8         | LUT            | 
+|MixColumns  | mix_gen[9].mix_row_three.lut_mul3_3/byte_out  | 256x8         | LUT            | 
+|MixColumns  | mix_gen[10].mix_row_three.lut_mul2_3/byte_out | 256x8         | LUT            | 
+|MixColumns  | mix_gen[10].mix_row_three.lut_mul3_3/byte_out | 256x8         | LUT            | 
+|MixColumns  | mix_gen[11].mix_row_three.lut_mul2_3/byte_out | 256x8         | LUT            | 
+|MixColumns  | mix_gen[11].mix_row_three.lut_mul3_3/byte_out | 256x8         | LUT            | 
+|MixColumns  | mix_gen[12].mix_row_four.lut_mul2_4/byte_out  | 256x8         | LUT            | 
+|MixColumns  | mix_gen[12].mix_row_four.lut_mul3_4/byte_out  | 256x8         | LUT            | 
+|MixColumns  | mix_gen[13].mix_row_four.lut_mul2_4/byte_out  | 256x8         | LUT            | 
+|MixColumns  | mix_gen[13].mix_row_four.lut_mul3_4/byte_out  | 256x8         | LUT            | 
+|MixColumns  | mix_gen[14].mix_row_four.lut_mul2_4/byte_out  | 256x8         | LUT            | 
+|MixColumns  | mix_gen[14].mix_row_four.lut_mul3_4/byte_out  | 256x8         | LUT            | 
+|MixColumns  | mix_gen[15].mix_row_four.lut_mul2_4/byte_out  | 256x8         | LUT            | 
+|MixColumns  | mix_gen[15].mix_row_four.lut_mul3_4/byte_out  | 256x8         | LUT            | 
++------------+-----------------------------------------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 1541.480 ; gain = 688.891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 1541.480 ; gain = 688.891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 1541.480 ; gain = 688.891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 1541.480 ; gain = 688.891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 1541.480 ; gain = 688.891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 1541.480 ; gain = 688.891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 1541.480 ; gain = 688.891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 1541.480 ; gain = 688.891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 1541.480 ; gain = 688.891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |     5|
+|3     |LUT1   |     1|
+|4     |LUT2   |    11|
+|5     |LUT3   |     1|
+|6     |FDRE   |    66|
+|7     |FDSE   |     1|
+|8     |LD     |    10|
+|9     |IBUF   |     3|
+|10    |OBUF   |    13|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 1541.480 ; gain = 688.891
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 989 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:36 . Memory (MB): peak = 1541.480 ; gain = 580.109
+Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 1541.480 ; gain = 688.891
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1541.480 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 15 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1541.480 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 10 instances were transformed.
+  LD => LDCE: 10 instances
+
+Le chemin d'accŠs sp‚cifi‚ est introuvable.
+Synth Design complete | Checksum: 3398573a
+INFO: [Common 17-83] Releasing license: Synthesis
+112 Infos, 190 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 1541.480 ; gain = 1079.172
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1541.480 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/Vivado_projects/AES_Final/AES_Final.runs/synth_1/AESBoard.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file AESBoard_utilization_synth.rpt -pb AESBoard_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Dec 22 15:02:29 2023...

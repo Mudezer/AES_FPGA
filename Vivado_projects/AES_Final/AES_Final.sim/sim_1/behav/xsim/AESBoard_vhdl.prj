@@ -1,0 +1,19 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../../src/AES/matpack.vhd" \
+"../../../../../../src/AES/AddRoundKey_v2.vhd" \
+"../../../../../../src/AES/Anode.vhd" \
+"../../../../../../src/AES/Decoder.vhd" \
+"../../../../../../src/AES/LUT_mul2.vhd" \
+"../../../../../../src/AES/LUT_mul3.vhd" \
+"../../../../../../src/AES/MatrixToVector_v2.vhd" \
+"../../../../../../src/AES/MixColumns_v2.vhd" \
+"../../../../../../src/AES/S_box.vhd" \
+"../../../../../../src/AES/SegmentMaster.vhd" \
+"../../../../../../src/AES/ShiftRows_v2.vhd" \
+"../../../../../../src/AES/SubBytes_v2.vhd" \
+"../../../../../../src/AES/VectorToMatrix_v2.vhd" \
+"../../../../../../src/AES/AES_Board.vhd" \
+
+# Do not sort compile order
+nosort

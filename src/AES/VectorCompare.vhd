@@ -17,9 +17,9 @@ begin
     proc : process
     begin
         if (input = expected) then
-            output <= TRUE;
+            output <= true;
         else
-            output <= FALSE;
+            output <= false;
         end if;
     end process proc;
 end arch;

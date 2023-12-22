@@ -1,0 +1,27 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/matpack.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AddRoundKey_v2.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'AddRoundKey'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/Anode.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Anode'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/Decoder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Decoder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul2.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'LUT_mul2'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/LUT_mul3.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'LUT_mul3'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MatrixToVector_v2.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'MatrixToVector'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/MixColumns_v2.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'MixColumns'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/S_box.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'S_box'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/SegmentMaster.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SegmentMaster'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/ShiftRows_v2.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ShiftRows'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/SubBytes_v2.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SubBytes'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/VectorToMatrix_v2.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'VectorToMatrix'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/yohku/Documents/ULB/Digital_Archi/AES_FPGA/src/AES/AES_Board.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'AESBoard'
